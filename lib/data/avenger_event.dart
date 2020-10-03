@@ -12,10 +12,10 @@ class LoadAvengers extends AvengerEvent{}
 
 class AddRandomAvenger extends AvengerEvent{}
 
-class UpdateWithRandomAvanger extends AvengerEvent{
+class UpdateWithRandomAvenger extends AvengerEvent{
   final Avenger updatedAvenger;
 
-  UpdateWithRandomAvanger(this.updatedAvenger): super([updatedAvenger]);
+  UpdateWithRandomAvenger(this.updatedAvenger): super([updatedAvenger]);
 }
 
 class DeleteAvenger extends AvengerEvent{

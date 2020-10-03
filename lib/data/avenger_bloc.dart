@@ -24,7 +24,7 @@ class AvengerBloc extends Bloc<AvengerEvent, AvengerState>{
       // a single Avenger from the database - we aren't yielding AvengerLoading().
       await _avengerDao.insert(RandomAvengerGenerator.getRandomAvenger());
       yield* _reloadAvengers();
-    }else if(event is UpdateWithRandomAvanger){
+    }else if(event is UpdateWithRandomAvenger){
       final newAvenger = RandomAvengerGenerator.getRandomAvenger();
 
       //keeping the ID of the avenger same
