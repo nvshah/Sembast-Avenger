@@ -29,6 +29,13 @@ class _HomePageState extends State<HomePage> {
         title: Text('Marvel SuperStar'),
       ),
       body: _buildBody(),
+      //button to add new item(avenger) in persistent storage
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+          _avengerBloc.dispatch(AddRandomAvenger());
+        },
+      )
     );
   }
   
@@ -67,7 +74,7 @@ class _HomePageState extends State<HomePage> {
         final displayedAvenger = state.avengers[index];
         return ListTile(
           title: Text(displayedAvenger.name),
-          subtitle: Text(displayedAvenger.isHero ? 'Team-IM!' : 'Team-CA!'),
+          subtitle: Text(displayedAvenger.isHero ? 'Team-IM' : 'Team-CA'),
           trailing: _buildUpdateDeletedButtons(displayedAvenger),
         );
       },
